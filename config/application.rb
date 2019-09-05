@@ -27,9 +27,12 @@ module ReactOnRails
     config.middleware.insert_before 0, Rack::Cors do
       allow do
         origins 'http://localhost:3000'
+        # resource '*',
+        #          headers: :any,
+        #          methods: %i[get post patch delete options]
         resource '*',
-                 headers: :any,
-                 methods: %i[get post patch delete options]
+        :headers => :any,
+        :methods => [:get, :post, :patch, :delete, :options]
       end
     end
   end
