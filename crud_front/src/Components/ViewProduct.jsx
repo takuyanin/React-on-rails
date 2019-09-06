@@ -7,9 +7,6 @@ class ViewProduct extends React.Component {
     this.state = {
       updateText: ''
     }
-    // this.handleInput = this.handleInput.bind(this)
-    // this.handleUpdate = this.handleUpdate.bind(this)
-    // this.handleDelete = this.handleDelete.bind(this)
   }
 
   handleDelete () {
@@ -28,7 +25,8 @@ class ViewProduct extends React.Component {
     return (
       <div>
         <span>{this.props.data.product}</span>
-        <span className='deleteButton' onClick={e => this.handleDelete(e)}>X</span>
+        {/* <span className='deleteButton' onClick={e => this.handleDelete(e)}>X</span> */}
+        <Button className='deleteButton' type='submit' onClick={e => this.handleUpdate(e)}>削除</Button>
         <span>
           <input type='text' value={this.state.updateText} onChange={e => this.handleInput(e)} />
         </span>
