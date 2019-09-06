@@ -2,9 +2,6 @@ import React from 'react'
 import ViewProduct from './ViewProduct'
 
 class ProductsContainer extends React.Component {
-  constructor(props) {
-    super(props)
-  }
   render () {
     return (
       <div className='productList'>
