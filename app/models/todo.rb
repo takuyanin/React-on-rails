@@ -1,4 +1,4 @@
 # frozen_string_literal: true
 
-class Product < ApplicationRecord
+class Todo < ApplicationRecord
 end
