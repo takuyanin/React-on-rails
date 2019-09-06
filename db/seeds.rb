@@ -8,8 +8,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Product.create([
-                 { product: 'dog' },
-                 { product: 'cat' },
-                 { product: 'horse' }
+Todo.create([
+                 { todo: 'dog' },
+                 { todo: 'cat' },
+                 { todo: 'horse' }
                ])

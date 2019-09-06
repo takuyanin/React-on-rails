@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button } from 'react-bootstrap'
 
-class ViewProduct extends React.Component {
+class ViewTodo extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -24,9 +24,8 @@ class ViewProduct extends React.Component {
   render () {
     return (
       <div>
-        <span>{this.props.data.product}</span>
-        {/* <span className='deleteButton' onClick={e => this.handleDelete(e)}>X</span> */}
-        <Button className='deleteButton' type='submit' onClick={e => this.handleUpdate(e)}>削除</Button>
+        <span>{this.props.data.text}</span>
+        <Button className='deleteButton' type='submit' onClick={e => this.handleDelete(e)}>削除</Button>
         <span>
           <input type='text' value={this.state.updateText} onChange={e => this.handleInput(e)} />
         </span>
@@ -38,4 +37,4 @@ class ViewProduct extends React.Component {
   }
 }
 
-export default ViewProduct
+export default ViewTodo
