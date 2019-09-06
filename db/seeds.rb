@@ -9,7 +9,13 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Todo.create([
-                 { todo: 'dog' },
-                 { todo: 'cat' },
-                 { todo: 'horse' }
-               ])
+  { text: 'dog' },
+  { text: 'cat' },
+  { text: 'horse' }
+])
+
+Memo.create([
+  { text: 'morning' },
+  { text: 'afternoon' },
+  { text: 'night' }
+])
