@@ -19,21 +19,20 @@ class MainContainer extends React.Component {
   }
 
   componentDidMount () {
-    console.log('componentDidMount')
-    axios.get('http://localhost:3001/todos')
-      .then((results) => {
-        this.setState({ todos: results.data })
+    console.log("componentDidMount")
+    axios.all([
+      axios.get('http://localhost:3001/todos'),
+      axios.get('http://localhost:3001/memos')
+    ])
+    .then(axios.spread((todoRes, memoRes) => {
+      this.setState({
+        todos: todoRes.data,
+        memos: memoRes.data
       })
-      .catch((data) => {
-        console.log(data)
-      })
-    axios.get('http://localhost:3001/memos')
-      .then((results) => {
-        this.setState({ memos: results.data })
-      })
-      .catch((data) => {
-        console.log(data)
-      })
+    }))
+    .catch((data) => {
+      console.log(data)
+    })
   }
 
   createTask (task, radio) {
