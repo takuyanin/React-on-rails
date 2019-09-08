@@ -15,7 +15,7 @@ Todo.create([
 ])
 
 Memo.create([
-  { text: 'morning' },
-  { text: 'afternoon' },
-  { text: 'night' }
+  { text: 'memo1' },
+  { text: 'memo2' },
+  { text: 'memo3' }
 ])
