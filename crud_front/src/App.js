@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import MainContainer from './Components/MainContainer'
-import bgImage from '../public/image4.jpg'
+import bgImage from '../public/image7.jpg'
 
 class App extends React.Component {
   render () {
