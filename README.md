@@ -1,26 +1,17 @@
-# README
-App using React as views on rails
+# TasksManager
+App using React as views on Rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
+![TasksManager](https://user-images.githubusercontent.com/37650050/64496363-16964e80-d2df-11e9-8227-c0f4aba812a4.png)
 
 * Ruby version
     2.5.1
 
-* System dependencies
+* Rails versin
+    5.2.3
 
-* Configuration
+After finishing preparation for running Rails project and installation for React modules,
+Run the command below in `front` dir.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+$ rails s -p 3001 & yarn start
+```
