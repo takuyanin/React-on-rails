@@ -31,29 +31,43 @@ class FormContainer extends React.Component {
   }
 
   render () {
-    const style = {width: 20, height: 20}
-
     return (
-      <div>
-        <Input type='radio' name='radioGroup'
-               value="todos" checked={this.state.radio === 'todos'}
-               onChange={e => this.onChangeRadio(e)} style={style}>
-        </Input>
-        <label>Todo</label>
-        <Input type='radio' name='radioGroup'
-               value="memos" checked={this.state.radio === 'memos'}
-               onChange={e => this.onChangeRadio(e)} style={style}>
-        </Input>
-        <label>メモ</label>
-        <FormGroup controlId='formBasicText'>
-          <FormControl
-            type='text'
-            value={this.state.todo}
-            placeholder='Enter text'
-            onChange={e => this.onChangeText(e)}
-          />
-        </FormGroup>
-        <Button type='submit' onClick={e => this.handleSubmit(e)}>Post</Button>
+      <div className="formContainer">
+        <div className="formContainer-inner">
+          <div className="formContainer-inner-top">
+            <span>Post Form</span>
+          </div>
+          <div className="formContainer-inner-bottom">
+            <div className="formContainer-inner-bottom-label">
+              <div>
+                <Input type='radio' name='radioGroup' className='radioBtn'
+                      value="todos" checked={this.state.radio === 'todos'}
+                      onChange={e => this.onChangeRadio(e)}>
+                </Input>
+                <label>Todo</label>
+              </div>
+              <div>
+                <Input type='radio' name='radioGroup' className='radioBtn'
+                      value="memos" checked={this.state.radio === 'memos'}
+                      onChange={e => this.onChangeRadio(e)}>
+                </Input>
+                <label>メモ</label>
+              </div>
+            </div>
+            <FormGroup className="formGroup" controlId='formBasicText'>
+              <FormControl
+                as="textarea"
+                row="3"
+                className="formControl"
+                type='text'
+                value={this.state.todo}
+                placeholder='Enter text'
+                onChange={e => this.onChangeText(e)}
+              />
+            </FormGroup>
+            <Button type='submit' onClick={e => this.handleSubmit(e)}>Post</Button>
+          </div>
+        </div>
       </div>
     )
   }
