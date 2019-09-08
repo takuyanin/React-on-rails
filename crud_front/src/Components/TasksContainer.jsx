@@ -1,5 +1,7 @@
 import React from 'react'
 import EachTask from './EachTask'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faStickyNote, faListAlt } from '@fortawesome/free-solid-svg-icons'
 
 class TasksContainer extends React.Component {
   render () {
@@ -9,7 +11,7 @@ class TasksContainer extends React.Component {
           <div className='todoList'>
             <div className='todoList-inner'>
               <div className='todoList-inner-title'>
-                <span>Todo</span>
+                <FontAwesomeIcon icon={faListAlt} /><span>Todo</span>
               </div>
               {this.props.todoData.map((data) => {
                 return (
@@ -23,7 +25,7 @@ class TasksContainer extends React.Component {
           <div className='memoList'>
             <div className='memoList-inner'>
               <div className='memoList-inner-title'>
-                <span>Memo</span>
+                <FontAwesomeIcon icon={faStickyNote} /><span>Memo</span>
               </div>
               {this.props.memoData.map((data) => {
                 return (

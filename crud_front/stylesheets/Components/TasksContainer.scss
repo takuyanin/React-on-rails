@@ -9,6 +9,7 @@ $marginTitle: 0 10px;
 $backgroundColorTitle: #60c2e5;
 $colorTitle: #ffffff;
 $borderTitle: 3px dashed white;
+$paddingLeftTitle: 10px;
 
 .tasksContainer {
   background-color: rgba(238, 238, 238, 0.5);
@@ -37,6 +38,9 @@ $borderTitle: 3px dashed white;
           color: $colorTitle;
           margin: $marginTitle;
           border: $borderTitle;
+          span {
+            padding-left: $paddingLeftTitle;
+          }
         }
       }
     }
@@ -57,6 +61,9 @@ $borderTitle: 3px dashed white;
           color: $colorTitle;
           margin: $marginTitle;
           border: $borderTitle;
+          span {
+            padding-left: $paddingLeftTitle;
+          }
         }
       }
     }

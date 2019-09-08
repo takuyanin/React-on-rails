@@ -1,5 +1,7 @@
 import React from 'react'
 import { Button } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 
 class EachTask extends React.Component {
   constructor (props) {
@@ -50,7 +52,7 @@ class EachTask extends React.Component {
         <span>
           <Button type='submit' onClick={e => this.handleUpdate(e)}>update</Button>
         </span>
-        <span className="showBtn" onClick={e => this.showHidden(e)}>≫</span>
+        <span className="showBtn" onClick={e => this.showHidden(e)}><FontAwesomeIcon icon={faChevronDown} /></span>
       </div>
     )
   }
