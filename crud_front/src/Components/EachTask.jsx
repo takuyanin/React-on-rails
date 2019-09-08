@@ -24,14 +24,14 @@ class EachTask extends React.Component {
 
   render () {
     return (
-      <div>
-        <span>{this.props.data.text}</span>
-        <Button className='deleteButton' type='submit' onClick={e => this.handleDelete(e)}>削除</Button>
+      <div class="eachTask">
+        <span class="eachTask-content">{this.props.data.text}</span>
+        <Button className='deleteBtn' type='submit' onClick={e => this.handleDelete(e)}>delete</Button>
         <span>
           <input type='text' value={this.state.updateText} onChange={e => this.handleInput(e)} />
         </span>
         <span>
-          <Button type='submit' onClick={e => this.handleUpdate(e)}>更新</Button>
+          <Button type='submit' onClick={e => this.handleUpdate(e)}>update</Button>
         </span>
       </div>
     )

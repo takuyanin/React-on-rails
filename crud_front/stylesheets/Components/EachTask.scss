@@ -1,5 +1,13 @@
-.deleteButton {
+.eachTask {
+  background-color: #ffffff;
+  margin: 10px;
   padding: 10px;
-  font-size: 20px;
-  color: red;
+  border-radius: 5px;
+  color: #444444;
+  &-content {
+    display: block;
+  }
+  .deleteBtn {
+    color: red;
+  }
 }
