@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button } from 'react-bootstrap'
 
-class ViewTodo extends React.Component {
+class EachTask extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -15,6 +15,7 @@ class ViewTodo extends React.Component {
 
   handleUpdate () {
     this.props.onUpdate(this.props.data.id, this.state.updateText)
+    this.setState({ updateText: '' })
   }
 
   handleInput (e) {
@@ -30,11 +31,11 @@ class ViewTodo extends React.Component {
           <input type='text' value={this.state.updateText} onChange={e => this.handleInput(e)} />
         </span>
         <span>
-          <Button type='submit' onClick={e => this.handleUpdate(e)}>更新！</Button>
+          <Button type='submit' onClick={e => this.handleUpdate(e)}>更新</Button>
         </span>
       </div>
     )
   }
 }
 
-export default ViewTodo
+export default EachTask
