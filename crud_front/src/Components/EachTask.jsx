@@ -52,7 +52,7 @@ class EachTask extends React.Component {
         <span>
           <Button type='submit' onClick={e => this.handleUpdate(e)}>update</Button>
         </span>
-        <span className="showBtn" onClick={e => this.showHidden(e)}><FontAwesomeIcon icon={faChevronDown} /></span>
+        <span className="showBtn" onClick={e => this.showHidden(e)}><FontAwesomeIcon icon={faChevronDown} className="faIcon" /></span>
       </div>
     )
   }

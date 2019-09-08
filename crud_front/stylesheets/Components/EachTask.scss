@@ -19,8 +19,11 @@
     padding: 0 10px;
     display: inline-block;
     cursor: pointer;
-    &:hover {
-      color: orange;
+    .faIcon {
+      color: #2C5379;
+      &:hover {
+        color: orange;
+      }
     }
   }
 }
