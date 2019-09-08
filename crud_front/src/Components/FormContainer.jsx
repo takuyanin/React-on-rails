@@ -51,7 +51,7 @@ class FormContainer extends React.Component {
                       value="memos" checked={this.state.radio === 'memos'}
                       onChange={e => this.onChangeRadio(e)}>
                 </Input>
-                <label>メモ</label>
+                <label>Memo</label>
               </div>
             </div>
             <FormGroup className="formGroup" controlId='formBasicText'>
