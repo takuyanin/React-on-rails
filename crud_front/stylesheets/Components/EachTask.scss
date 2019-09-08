@@ -6,6 +6,8 @@
   color: #444444;
   &-content {
     display: block;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
   }
   .deleteBtn {
     color: red;
