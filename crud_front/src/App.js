@@ -1,10 +1,13 @@
 import React from 'react'
+import ReactDOM from 'react-dom'
 import MainContainer from './Components/MainContainer'
+import bgImage from '../public/image4.jpg'
 
 class App extends React.Component {
   render () {
+    const style = {backgroundImage:`url(${bgImage})`}
     return (
-      <div className='App'>
+      <div className='App' style={style}>
         <MainContainer />
       </div>
     )
@@ -12,3 +15,7 @@ class App extends React.Component {
 }
 
 export default App
+
+ReactDOM.render(
+  <App />, document.querySelector('.container')
+)

@@ -1,5 +1,9 @@
 @import "./App.scss";
 @import "./Components/MainContainer.scss";
 @import "./Components/FormContainer.scss";
-@import "./Components/TodosContainer.scss";
-@import "./Components/ViewTodo.scss";
+@import "./Components/TasksContainer.scss";
+@import "./Components/EachTask.scss";
+
+body {
+  margin: 0 auto;
+}

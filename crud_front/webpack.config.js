@@ -1,55 +1,67 @@
+const HtmlWebPackPlugin = require('html-webpack-plugin')
 const path = require('path')
-const ETP = require('extract-text-webpack-plugin')
-
 const publicDir = path.join(__dirname, '/public')
-module.exports = [
-  {
-    entry: './src/index.js',
-    output: {
-      path: publicDir,
-      publicPath: '/',
-      filename: 'bundle.js'
-    },
-    module: {
-      loaders: [{
+// const ETP = require('extract-text-webpack-plugin')
+
+module.exports = {
+  entry: './src/index.js',
+  output: {
+    path: publicDir,
+    publicPath: '/',
+    filename: 'bundle.js'
+  },
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
-        query: {
-          presets: ['react', 'env']
-        },
-      }],
-    },
-    resolve: {
-      extensions: ['.js', '.jsx'],
-    },
-    devServer: {
-      historyApiFallback: true,
-      contentBase: publicDir
-    },
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['react', 'env']
+          }
+        }
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+                url: false,
+                importLoaders: 2
+            }
+          },
+          {
+            loader: 'sass-loader'
+          }
+        ]
+      },
+      {
+        test: /\.jpg$/,
+        use: {
+          // loader: 'url-loader',
+          loader: 'file-loader',
+          options: {
+            limit: 8192,
+            name: './public/image1.jpg'
+          }
+        }
+      },
+    ]
   },
-  {
-    entry: {
-      style: './stylesheets/index.scss',
-    },
-    output: {
-      path: publicDir,
-      publicPath: '/',
-      filename: 'bundle.css',
-    },
- 		module: {
-			loaders: [
-				{
-					test: /\.css$/,
-					loader: ETP.extract({ fallback: 'style-loader', use: 'css-loader' }),
-				},
-				{
-					test: /\.scss$/,
-					loader: ETP.extract({ fallback: 'style-loader', use: 'css-loader!sass-loader' }),
-				},
-			],
-		},
-		plugins: [
-			new ETP('bundle.css'),
-		],
+  resolve: {
+    extensions: ['.js', '.jsx']
   },
-]
+  devServer: {
+    // inline: false,
+    historyApiFallback: true,
+    contentBase: publicDir
+  },
+  plugins: [
+    new HtmlWebPackPlugin({
+      template: './public/index.html',
+    })
+  ]
+}
