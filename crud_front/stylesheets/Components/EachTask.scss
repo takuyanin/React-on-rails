@@ -4,11 +4,23 @@
   padding: 10px;
   border-radius: 5px;
   &-content {
-    display: block;
     overflow-wrap: break-word;
     word-wrap: break-word;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    transition: 0.2s;
   }
   .deleteBtn {
     color: red;
+  }
+  .showBtn {
+    padding: 0 10px;
+    display: inline-block;
+    cursor: pointer;
+    &:hover {
+      color: orange;
+    }
   }
 }
