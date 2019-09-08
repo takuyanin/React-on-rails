@@ -53,7 +53,7 @@ class FormContainer extends React.Component {
             onChange={e => this.onChangeText(e)}
           />
         </FormGroup>
-        <Button type='submit' onClick={e => this.handleSubmit(e)}>投稿する</Button>
+        <Button type='submit' onClick={e => this.handleSubmit(e)}>Post</Button>
       </div>
     )
   }
