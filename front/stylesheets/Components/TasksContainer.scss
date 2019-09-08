@@ -1,0 +1,73 @@
+$fontTasks: 20px;
+$fontTasks-title: 30px;
+$widthTasks: 320px;
+$heightTask: 70vh;
+$paddingBottomTask: 15px;
+$paddingBottomTaskInner: 20px;
+$paddingTopTaskList: 10px;
+$marginTitle: 0 10px;
+$backgroundColorTitle: #0E7AC4;
+$colorTitle: #ffffff;
+$borderTitle: 3px dashed white;
+$paddingLeftTitle: 10px;
+
+.tasksContainer {
+  background-color: rgba(238, 238, 238, 0.5);
+  width: 700px;
+  height: 80vh;
+  margin: 50px;
+  &-inner {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    margin: 20px;
+    .todoList {
+      background-color: rgba(198, 157, 43, 0.3);
+      border: 3px dashed rgba(198, 157, 43, 0.8);
+      padding-bottom: $paddingBottomTask;
+      padding-top: $paddingTopTaskList;
+      &-inner {
+        font-size: $fontTasks;
+        width: $widthTasks;
+        height: $heightTask;
+        overflow: scroll;
+        padding-bottom: $paddingBottomTaskInner;
+        text-align: center;
+        &-title {
+          font-size: $fontTasks-title;
+          background-color: $backgroundColorTitle;
+          color: $colorTitle;
+          margin: $marginTitle;
+          border: $borderTitle;
+          span {
+            padding-left: $paddingLeftTitle;
+          }
+        }
+      }
+    }
+    .memoList {
+      background-color: rgba(36, 36, 36, 0.3);
+      border: 3px dashed rgba(36, 36, 36, 0.2);
+      padding-bottom: $paddingBottomTask;
+      padding-top: $paddingTopTaskList;
+      &-inner {
+        font-size: $fontTasks;
+        width: $widthTasks;
+        height: $heightTask;
+        overflow: scroll;
+        padding-bottom: $paddingBottomTaskInner;
+        text-align: center;
+        &-title {
+          font-size: $fontTasks-title;
+          background-color: $backgroundColorTitle;
+          color: $colorTitle;
+          margin: $marginTitle;
+          border: $borderTitle;
+          span {
+            padding-left: $paddingLeftTitle;
+          }
+        }
+      }
+    }
+  }
+}

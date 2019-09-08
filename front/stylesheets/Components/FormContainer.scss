@@ -1,0 +1,57 @@
+$heightRabel: 25px;
+$heightTop: 100px;
+$heightBtn: 40px;
+$baseFormColor: #ffffff;
+
+.formContainer {
+  background-color: $baseFormColor;
+  width: 450px;
+  height: 320px;
+  margin-top: 50px;
+  margin-left: 100px;
+  &-inner {
+    &-top {
+      background-color: #F58E7E;
+      height: $heightTop;
+      line-height: $heightTop;
+      font-size: 40px;
+      color: $baseFormColor;
+      text-align: center;
+    }
+    &-bottom {
+      margin: 10px auto;
+      width: 90%;
+      &-label {
+        display: flex;
+        margin: 0 auto;
+        .radioBtn {
+          width: $heightRabel;
+          height: $heightRabel;
+        }
+        label {
+          font-size: $heightRabel;
+          padding-right: 10px;
+        }
+      }
+      .formGroup {
+        margin-top: 10px;
+        .formControl {
+          font-size: 20px;
+          border: 2px solid #8DCF3F;
+          height: 80px;
+          width: 95%;
+          border-radius: 5px;
+        }
+      }
+      button {
+        background-color: #0E7AC4;
+        color: $baseFormColor;
+        height: $heightBtn;
+        line-height: $heightBtn;
+        font-size: 20px;
+        border-radius: 5px;
+        margin-top: 10px;
+      }
+    }
+  }
+}
