@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "start": "./node_modules/.bin/webpack-dev-server --port 3000",
-    "build": "./node_modules/.bin/webpack --config webpack.config.js"
+    "build": "./node_modules/.bin/webpack --config webpack.config.js",
+    "multi": "rails s -p 3001 & yarn start"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.22",
