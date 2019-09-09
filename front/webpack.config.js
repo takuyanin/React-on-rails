@@ -1,67 +1,63 @@
-const HtmlWebPackPlugin = require('html-webpack-plugin')
 const path = require('path')
-const publicDir = path.join(__dirname, '/public')
-// const ETP = require('extract-text-webpack-plugin')
+const ETP = require('extract-text-webpack-plugin')
 
-module.exports = {
-  entry: './src/index.js',
-  output: {
-    path: publicDir,
-    publicPath: '/',
-    filename: 'bundle.js'
-  },
-  module: {
-    rules: [
-      {
-        test: /\.(js|jsx)$/,
+const publicDir = path.join(__dirname, '/public')
+module.exports = [
+  {
+    entry: './src/index.js',
+    output: {
+      path: publicDir,
+      publicPath: '/',
+      filename: 'bundle.js'
+    },
+    module: {
+      loaders: [{
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['react', 'env']
-          }
+        loader: 'babel-loader',
+        query: {
+          presets: ['react', 'env']
         }
-      },
-      {
-        test: /\.scss$/,
-        use: [
-          'style-loader',
-          {
-            loader: 'css-loader',
-            options: {
-                url: true,
-                importLoaders: 2
-            }
-          },
-          {
-            loader: 'sass-loader'
-          }
-        ]
-      },
-      {
-        test: /\.jpg$/,
-        use: {
-          // loader: 'url-loader',
+      }]
+    },
+    resolve: {
+      extensions: ['.js', '.jsx']
+    },
+    devServer: {
+      historyApiFallback: true,
+      contentBase: publicDir
+    }
+  },
+  {
+    entry: {
+      style: './stylesheets/index.scss'
+    },
+    output: {
+      path: publicDir,
+      publicPath: '/',
+      filename: 'bundle.css'
+    },
+    module: {
+      loaders: [
+        {
+          test: /\.css$/,
+          loader: ETP.extract({ fallback: 'style-loader', use: 'css-loader' })
+        },
+        {
+          test: /\.scss$/,
+          loader: ETP.extract({ fallback: 'style-loader', use: 'css-loader!sass-loader' })
+        },
+        {
+          test: /\.jpg$/,
           loader: 'file-loader',
           options: {
             limit: 8192,
-            name: './build.jpg'
+            name: '[name].[ext]'
           }
         }
-      },
+      ]
+    },
+    plugins: [
+      new ETP('bundle.css')
     ]
-  },
-  resolve: {
-    extensions: ['.js', '.jsx']
-  },
-  devServer: {
-    // inline: false,
-    historyApiFallback: true,
-    contentBase: publicDir
-  },
-  plugins: [
-    new HtmlWebPackPlugin({
-      template: './public/index.html',
-    })
-  ]
-}
+  }
+]
